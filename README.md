@@ -14,14 +14,34 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### CheckList Project
+## Struttura applicazione
+- [x] Servizio API centralizzato
+- [x] Routing
+## Lista corsi
+- [x] Lista
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Pagina Iscrizione
+- [x] Form
+- [x] Validatori
+- [x] Submit
+- [x] Messaggio (pipe)
 
-## Running end-to-end tests
+## Pagina Docenti
+- [x] Lista
+- [x] Pagina Login
+- [x] Guardie
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- [x] Compilazione webpack
 
-## Further help
+## Pagina Docenti
+- [x] Grafica
+- [x] Responsività
+- [x] Salvataggi reali
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Note:
+
+For Production add --prod to commands and compile with AoT
+
+
+
