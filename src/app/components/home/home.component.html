@@ -25,6 +25,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<a mat-button class="private-area" (click)="navigateToTutorPage()" target="_blank">Area riservata docenti</a>
+<a mat-button class="private-area" (click)="navigateToTutorPage()" target="_blank">Entra in area riservata docenti</a>
 <app-subscribe *ngIf="showForm"  [trainId]="trainId" [trainTitle]="trainTitle"></app-subscribe>
 </div>
