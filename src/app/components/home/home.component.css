@@ -7,3 +7,7 @@ table {
     color: white;
     float: right;
 }
+
+.center-table{
+    padding-top: 40px;
+}
