@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './components/home/home.module';
 import { TutorModule } from './components/tutor/tutor.module';
+import { BackendModule } from './services/backend.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TutorModule } from './components/tutor/tutor.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HomeModule,
-    TutorModule
+    TutorModule,
+    BackendModule
   ],
   providers: [],
   bootstrap: [AppComponent]
