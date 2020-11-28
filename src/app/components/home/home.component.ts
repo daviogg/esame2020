@@ -1,28 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Training } from 'src/app/models/training';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+  displayedColumns: string[] = ['id', 'title', 'date'];
+  dataSource: MatTableDataSource<TableHeaderItem>;
 
-  loginForm: FormGroup;
+  constructor(private service: BackendService) { }
 
-  constructor( private formBuilder: FormBuilder) { }
+  ngAfterViewInit(): void {
+     this.PopulateDataSource();
+  }
+
+  private async PopulateDataSource(): Promise<void>
+  {
+    const ds: Training[] = await this.service.getTrainingsList();
+    const tableObject: TableHeaderItem[]  = [];
+
+    ds.forEach(r => {
+      const row: TableHeaderItem = {
+        id : r.id,
+        title : r.title,
+        date : r.date
+      };
+      tableObject.push(row);
+    });
+    this.dataSource = new MatTableDataSource<TableHeaderItem>(tableObject);
+  }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required]
-    });
   }
+}
 
-  submit(): void {
-    if (!this.loginForm.valid) {
-      return;
-    }
-    console.log(this.loginForm.value);
-  }
+export interface TableHeaderItem {
+  id: number;
+  title: string;
+  date: string;
 }

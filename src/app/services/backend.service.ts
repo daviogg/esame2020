@@ -8,7 +8,7 @@ import { Training } from '../models/training';
 })
 export class BackendService {
 
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = 'http://localhost:3000';
   constructor(private httpClient: HttpClient) { }
 
   async getTrainingsList(): Promise<Training[]>{
