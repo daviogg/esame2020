@@ -9,7 +9,7 @@ import { BackendService } from 'src/app/services/backend.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'title', 'date'];
+  displayedColumns: string[] = ['id', 'title', 'date', 'subscribe'];
   dataSource: MatTableDataSource<TableHeaderItem>;
 
   constructor(private service: BackendService) { }
@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+  }
+
+  signUp(id: number): void{
+    console.log('ti sei iscritto con id' + id);
   }
 }
 
