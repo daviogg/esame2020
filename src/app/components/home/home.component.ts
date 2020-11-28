@@ -12,6 +12,9 @@ import { BackendService } from 'src/app/services/backend.service';
 export class HomeComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'title', 'date', 'subscribe'];
   dataSource: MatTableDataSource<TableHeaderItem>;
+  showForm = false;
+  trainId: string;
+  trainTitle: string;
 
   constructor(private service: BackendService, private router: Router) { }
 
@@ -38,8 +41,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  signUp(id: number): void{
-    this.router.navigate([`subscribe/${id}`]);
+  signUp(id: number, title: string): void{
+    this.trainId = id.toString();
+    this.trainTitle = title;
+    this.showForm = true;
   }
 }
 

@@ -1,11 +1,16 @@
-.example-container{
+.subscribe-container{
     text-align: center;
+}
+
+.form-title{
+    font-size: larger;
+    color: white;
 }
 
 .form-container{
     width: 400px; 
     margin: 0px auto;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 .form-field{
@@ -15,4 +20,12 @@
 .form-input{
     font-size: medium;
     color: white;
+}
+
+.success-operation{
+    font-size: larger;
+    color: white;
+    margin: 0px auto;
+    margin-top: 200px;
+    display: block;
 }

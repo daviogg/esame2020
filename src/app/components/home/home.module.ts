@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { SubscribeModule } from '../subscribe/subscribe.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     MatTableModule,
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    SubscribeModule
   ],
   exports: [
     HomeComponent

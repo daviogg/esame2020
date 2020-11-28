@@ -8,6 +8,7 @@ import { TutorModule } from './components/tutor/tutor.module';
 import { BackendModule } from './services/backend.module';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { SubscribeModule } from './components/subscribe/subscribe.module';
+import { SuccessOperationPipe } from './pipes/success-operation.pipe';
 
 @NgModule({
   declarations: [

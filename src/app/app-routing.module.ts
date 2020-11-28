@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'tutor', component: TutorComponent, pathMatch: 'full' },
-  { path: 'subscribe/:id', component: SubscribeComponent, pathMatch: 'full'},
   { path: '**', redirectTo: 'home'}
 ];
 

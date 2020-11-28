@@ -1,5 +1,7 @@
-<div class="example-container">
-    <div class="form-container">
+
+<div class="subscribe-container" >
+    <div class="form-container" *ngIf="!isSignedUp">
+        <mat-label class="form-title">Ti stai iscrivendo al corso {{trainTitle}}:</mat-label>
         <form [formGroup]="subscribeForm" (submit)="submit()">
             <mat-form-field class="form-field" appearance="outline">
                 <mat-label> Nome
@@ -38,5 +40,8 @@
             </mat-form-field>
             <button mat-raised-button  [disabled]="subscribeForm.invalid" color="primary" type="submit">Log In</button>
         </form>
+    </div>
+    <div *ngIf="isSignedUp">
+        <mat-label class="success-operation">{{signedUp | successOperation: trainTitle}}</mat-label>
     </div>
 </div>

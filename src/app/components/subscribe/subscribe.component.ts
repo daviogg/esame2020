@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SignedUp } from 'src/app/models/signedUp';
@@ -12,9 +12,13 @@ import { BackendService } from 'src/app/services/backend.service';
 export class SubscribeComponent implements OnInit {
 
   subscribeForm: FormGroup;
-  private signedUp: SignedUp;
-  private trainId: string;
+  signedUp: SignedUp;
   private phoneNumberRegExp = new RegExp('^(\\((00|\\+)39\\)|(00|\\+)39)?(38[890]|34[7-90]|36[680]|33[3-90]|32[89])\\d{7}');
+
+  @Input() trainTitle: string;
+  @Input() trainId: string;
+
+  isSignedUp = false;
 
   constructor(private formBuilder: FormBuilder, private backendService: BackendService, private route: ActivatedRoute) { }
 
@@ -25,8 +29,6 @@ export class SubscribeComponent implements OnInit {
       phoneNumber: [null, Validators.pattern(this.phoneNumberRegExp)],
       email: [null, [Validators.required, Validators.email]]
     });
-
-    this.trainId = this.route.snapshot.paramMap.get('id');
   }
 
   async submit(): Promise<void> {
@@ -45,7 +47,7 @@ export class SubscribeComponent implements OnInit {
       phone: this.subscribeForm.controls.phoneNumber.value
     };
 
-    this.backendService.signUpTraining(this.signedUp).subscribe(evt => console.log('Subscribed!'));
+    this.backendService.signUpTraining(this.signedUp).subscribe(() => this.isSignedUp = true);
   }
 
 }
