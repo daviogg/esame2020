@@ -8,28 +8,28 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## CheckList Project
 ### Struttura applicazione
-- [x] Servizio API centralizzato
-- [x] Routing
+- ✅ Servizio API centralizzato
+- ✅ Routing
 ### Lista corsi
-- [x] Lista
+- ✅ Lista
 
 ### Pagina Iscrizione
-- [x] Form
-- [x] Validatori
-- [x] Submit
-- [x] Messaggio (pipe)
+- ✅ Form
+- ✅ Validatori
+- ✅ Submit
+- ✅ Messaggio (pipe)
 
 ### Pagina Docenti
-- [x] Lista
-- [x] Pagina Login
-- [x] Guardie
+- ✅ Lista
+- ✅ Pagina Login
+- ✅ Guardie
 
-- [x] Compilazione webpack
+- ✅ Compilazione webpack
 
 ### Pagina Docenti
-- [x] Grafica
-- [x] Responsività
-- [x] Salvataggi reali
+- ✅ Grafica
+- ✅ Responsività
+- ✅ Salvataggi reali
 
 
 
