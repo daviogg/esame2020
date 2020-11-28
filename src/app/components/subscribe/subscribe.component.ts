@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { SignedUp } from 'src/app/models/signedUp';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -20,7 +19,7 @@ export class SubscribeComponent implements OnInit {
 
   isSignedUp = false;
 
-  constructor(private formBuilder: FormBuilder, private backendService: BackendService, private route: ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private backendService: BackendService) { }
 
   ngOnInit(): void {
     this.subscribeForm = this.formBuilder.group({
