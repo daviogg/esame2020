@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './components/home/home.module';
 import { TutorModule } from './components/tutor/tutor.module';
 import { BackendModule } from './services/backend.module';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
+import { SubscribeModule } from './components/subscribe/subscribe.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { BackendModule } from './services/backend.module';
     BrowserAnimationsModule,
     HomeModule,
     TutorModule,
-    BackendModule
+    BackendModule,
+    SubscribeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

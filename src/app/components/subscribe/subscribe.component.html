@@ -1,0 +1,42 @@
+<div class="example-container">
+    <div class="form-container">
+        <form [formGroup]="subscribeForm" (submit)="submit()">
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Nome
+                </mat-label>
+                <input matInput class="form-input" class="form-input" formControlName="firstName" required>
+                <mat-error *ngIf="subscribeForm.controls.firstName.touched && subscribeForm.controls.firstName.invalid">
+                    <span *ngIf="subscribeForm.controls.firstName.errors.required">Il campo è obbligatorio.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Cognome
+                </mat-label>
+                <input matInput class="form-input" formControlName="lastName" required>
+                <mat-error *ngIf="subscribeForm.controls.lastName.touched && subscribeForm.controls.lastName.invalid">
+                    <span *ngIf="subscribeForm.controls.lastName.errors.required">This field is mandatory.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Numero di telefono
+                </mat-label>
+                <input matInput class="form-input" formControlName="phoneNumber" required>
+                <mat-error
+                    *ngIf="subscribeForm.controls.phoneNumber.touched && subscribeForm.controls.phoneNumber.invalid">
+                    <span *ngIf="subscribeForm.controls.phoneNumber.errors.required">This field is mandatory.</span>
+                    <span *ngIf="subscribeForm.controls.phoneNumber.errors.pattern">This field is invalid.</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label> E-mail
+                </mat-label>
+                <input matInput class="form-input" placeholder="mail@example.com" formControlName="email" required>
+                <mat-error *ngIf="subscribeForm.controls.email.touched && subscribeForm.controls.email.invalid">
+                    <span *ngIf="subscribeForm.controls.email.errors.required">This field is mandatory.</span>
+                    <span *ngIf="subscribeForm.controls.email.errors.pattern">This field is invalid.</span>
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button  [disabled]="subscribeForm.invalid" color="primary" type="submit">Log In</button>
+        </form>
+    </div>
+</div>

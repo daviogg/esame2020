@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Training } from 'src/app/models/training';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'title', 'date', 'subscribe'];
   dataSource: MatTableDataSource<TableHeaderItem>;
 
-  constructor(private service: BackendService) { }
+  constructor(private service: BackendService, private router: Router) { }
 
   ngAfterViewInit(): void {
      this.PopulateDataSource();
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   signUp(id: number): void{
-    console.log('ti sei iscritto con id' + id);
+    this.router.navigate([`subscribe/${id}`]);
   }
 }
 
