@@ -11,3 +11,9 @@ table {
 .center-table{
     padding-top: 40px;
 }
+
+.tutor-label{
+    font-size: larger;
+    color: greenyellow;
+    padding: 5px;
+}

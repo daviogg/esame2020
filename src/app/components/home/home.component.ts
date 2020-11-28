@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showForm = false;
   trainId: string;
   trainTitle: string;
-
+  isTutor = GlobalConstants.isTutor;
   constructor(private service: BackendService, private router: Router) { }
 
   ngAfterViewInit(): void {
