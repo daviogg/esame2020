@@ -1,6 +1,6 @@
 # Esame2020
 
-Project for Angular exams at Reti S.p.A
+Project for Angular exam at Reti S.p.A
 
 ## Build
 
