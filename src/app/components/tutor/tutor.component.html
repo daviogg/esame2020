@@ -6,8 +6,8 @@
           </mat-label>
           <input matInput class="form-input" formControlName="email" required>
           <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
-            <span *ngIf="loginForm.controls.email.errors.required">This field is mandatory.</span>
-            <span *ngIf="loginForm.controls.email.errors.pattern">This field is invalid.</span>
+            <span *ngIf="loginForm.controls.email.errors.required">Il campo è obbligatorio.</span>
+            <span *ngIf="loginForm.controls.email.errors.pattern">Il campo non è valido.</span>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="form-field" appearance="outline">
@@ -15,7 +15,7 @@
           </mat-label>
           <input matInput class="form-input" formControlName="password" type="password">
           <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
-            <span *ngIf="loginForm.controls.password.errors.required">This field is mandatory.</span>
+            <span *ngIf="loginForm.controls.password.errors.required">Il campo è obbligatorio.</span>
           </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" [disabled]="loginForm.invalid" type="submit">Log In</button>
