@@ -20,6 +20,10 @@ export class BackendService {
     return await this.httpClient.get<SignedUp[]>(`${this.baseUrl}/signedUps`).toPromise();
   }
 
+  async getSignedUpList(trainId: number): Promise<SignedUp[]>{
+    return await this.httpClient.get<SignedUp[]>(`${this.baseUrl}/signedUps?trainId=${trainId}`).toPromise();
+  }
+
    signUpTraining(signedUp: SignedUp): Observable<SignedUp>{
       return this.httpClient.post<SignedUp>(`${this.baseUrl}/signedUps`, signedUp);
   }

@@ -9,6 +9,8 @@ import { BackendModule } from './services/backend.module';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { SubscribeModule } from './components/subscribe/subscribe.module';
 import { SuccessOperationPipe } from './pipes/success-operation.pipe';
+import { TutorSearchComponent } from './components/tutor-search/tutor-search.component';
+import { TutorSearchModule } from './components/tutor-search/tutor-search.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SuccessOperationPipe } from './pipes/success-operation.pipe';
     HomeModule,
     TutorModule,
     BackendModule,
-    SubscribeModule
+    SubscribeModule,
+    TutorSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

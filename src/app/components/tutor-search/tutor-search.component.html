@@ -1,0 +1,18 @@
+
+<div class="search-container">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Corsi</mat-label>
+      <mat-select (valueChange)="changeValue($event)">
+        <mat-option value="option"  *ngFor="let train of trainings" [value]="train.id">{{train.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div class="search-container">
+<mat-list role="list" *ngIf="signedUps">
+    <mat-label class="form-label" *ngIf="signedUps.length">Utenti iscritti al corso:</mat-label>
+    <mat-label class="form-label" *ngIf="!signedUps.length">Nessun utente è iscritto al corso</mat-label>
+    <br>
+    <br>
+    <mat-list-item role="listitem" *ngFor="let signed of signedUps">{{signed.name}} {{signed.surname}}</mat-list-item>
+</mat-list>
+</div>
