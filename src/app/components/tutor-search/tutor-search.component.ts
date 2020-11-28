@@ -30,7 +30,7 @@ export class TutorSearchComponent implements OnInit {
     this.signedUps = await this.service.getSignedUpList(this.selectedTrainId);
   }
 
-  navigateToHome(){
+  navigateToHome(): void{
     this.router.navigate([`home`]);
   }
 
