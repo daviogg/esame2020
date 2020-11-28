@@ -7,7 +7,7 @@ import { TutorComponent } from './components/tutor/tutor.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
-  { path: 'tutor', component: TutorComponent, pathMatch: 'full' },
+  { path: 'tutor/signin', component: TutorComponent, pathMatch: 'full' },
   { path: '**', redirectTo: 'home'}
 ];
 

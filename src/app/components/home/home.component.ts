@@ -46,6 +46,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.trainTitle = title;
     this.showForm = true;
   }
+
+  navigateToTutorPage(): void{
+    this.router.navigate([`tutor/signin`]);
+  }
 }
 
 export interface TableHeaderItem {

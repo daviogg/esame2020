@@ -1,3 +1,9 @@
 table {
     width: 100%;
 }
+
+.private-area{
+    font-size: larger;
+    color: white;
+    float: right;
+}
