@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { TutorSearchComponent } from './components/tutor-search/tutor-search.component';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { TutorAccessGuard } from './guards/tutor-access.guard';
