@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/commons/global-constants';
 import { Training } from 'src/app/models/training';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -19,19 +20,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private service: BackendService, private router: Router) { }
 
   ngAfterViewInit(): void {
-     this.PopulateDataSource();
+    this.PopulateDataSource();
   }
 
-  private async PopulateDataSource(): Promise<void>
-  {
+  private async PopulateDataSource(): Promise<void> {
     const ds: Training[] = await this.service.getTrainingsList();
-    const tableObject: TableHeaderItem[]  = [];
+    const tableObject: TableHeaderItem[] = [];
 
     ds.forEach(r => {
       const row: TableHeaderItem = {
-        id : r.id,
-        title : r.title,
-        date : r.date
+        id: r.id,
+        title: r.title,
+        date: r.date
       };
       tableObject.push(row);
     });
@@ -41,14 +41,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  signUp(id: number, title: string): void{
+  signUp(id: number, title: string): void {
     this.trainId = id.toString();
     this.trainTitle = title;
     this.showForm = true;
   }
 
-  navigateToTutorPage(): void{
-    this.router.navigate([`tutor/signin`]);
+  navigateToTutorPage(): void {
+    if (GlobalConstants.isTutor) {
+      this.router.navigate([`tutor/search`]);
+    } else {
+      this.router.navigate([`tutor/signin`]);
+    }
   }
 }
 
