@@ -16,9 +16,7 @@ export class SubscribeComponent implements OnInit {
   private trainId: string;
   private phoneNumberRegExp = new RegExp('^(\\((00|\\+)39\\)|(00|\\+)39)?(38[890]|34[7-90]|36[680]|33[3-90]|32[89])\\d{7}');
 
-  constructor(private formBuilder: FormBuilder,
-    private backendService: BackendService,
-    private route: ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private backendService: BackendService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.subscribeForm = this.formBuilder.group({
