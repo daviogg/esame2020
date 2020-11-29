@@ -3,9 +3,9 @@
 Project for Angular exam at Reti S.p.A
 
 ## Database
-Install json-server :`npm install -g json-server`(https://github.com/typicode/json-server).
-Insert db.json inside a folder and start the server typing `json-server --watch db.json`
-connect to http://localhost:3000
+* Install json-server :`npm install -g json-server`(https://github.com/typicode/json-server).
+* Insert db.json inside a folder and start the server typing `json-server --watch db.json`.
+* Connect to http://localhost:3000 .
 
 ## Build
 
